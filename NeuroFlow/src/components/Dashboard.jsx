@@ -17,9 +17,10 @@ import ScoreCard from './ScoreCard'
 import ScoreChart from './ScoreChart'
 import CognitiveBreakdownCard from './CognitiveBreakdownCard'
 import SmartSuggestionCard from './SmartSuggestionCard'
+import ExternalSiteStatsCard from './ExternalSiteStatsCard'
 
 const Dashboard = () => {
-  // Activate all trackers & syncs
+  // Enable trackers and logging
   useScrollTracker()
   useIdleTracker()
   useTabSwitchTracker()
@@ -35,7 +36,7 @@ const Dashboard = () => {
         <Link to="/" className="text-indigo-600 hover:underline">← Back to Home</Link>
       </header>
 
-      {/* Tracking + Journal Section */}
+      {/* Core Usage Tracking */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
         <ScoreCard />
         <ScrollStatsCard />
@@ -44,15 +45,20 @@ const Dashboard = () => {
         <JournalCard />
       </div>
 
-      {/* Score Chart */}
+      {/* Time & Score Trend */}
       <div className="mb-10">
         <ScoreChart />
       </div>
 
-      {/* Insights Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {/* AI Breakdown + Suggestions */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
         <CognitiveBreakdownCard />
         <SmartSuggestionCard />
+      </div>
+
+      {/* New: External Site Logs from Extension */}
+      <div className="mb-10">
+        <ExternalSiteStatsCard />
       </div>
     </div>
   )
