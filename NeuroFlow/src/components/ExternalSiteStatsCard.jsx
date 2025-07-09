@@ -12,7 +12,6 @@ const ExternalSiteStatsCard = () => {
 
       try {
         window.chrome.runtime.sendMessage(
-          'naoaegnkegbgiamilpaniiojafadddnn', // Replace this!
           { type: 'GET_BEHAVIOR_LOGS' },
           (response) => {
             if (response?.logs) {
