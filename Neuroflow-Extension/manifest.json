@@ -21,7 +21,17 @@
       "run_at": "document_idle"
     }
   ],
+  "web_accessible_resources": [
+    {
+      "resources": ["dashboard/*"],
+      "matches": ["<all_urls>"]
+    }
+  ],
   "action": {
-    "default_title": "NeuroFlow Active"
+    "default_title": "NeuroFlow Dashboard",
+    "default_popup": "dashboard/index.html"
+  },
+  "icons": {
+    "128": "icons/icon128.png"
   }
 }
